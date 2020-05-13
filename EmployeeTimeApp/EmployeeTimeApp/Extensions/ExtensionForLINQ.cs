@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace EmployeeTimeApp.Class
 {
+    //Extension for LINQ which return
     public static  class ExtensionForLINQ
     {
-        public static IEnumerable<TSource> TopWithTies<TSource, TValue>(
-  this IEnumerable<TSource> source,
-  int count,
-  Func<TSource, TValue> selector)
+        public static IEnumerable<TSource> TopWithTies<TSource, TValue>
+           (this IEnumerable<TSource> source,
+            int count,
+            Func<TSource, TValue> selector)
         {
             if (source == null) throw new ArgumentNullException("source");
             if (selector == null) throw new ArgumentNullException("selector");
